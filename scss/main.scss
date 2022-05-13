@@ -1,10 +1,12 @@
-/* Estilos generales */
+@import "variables";
 
-* {
+// Generales
+
+/* Header */
+*{
     margin: 0;
     padding: 0;
 }
-
 
 h1 {
     font-family: 'Oleo Script Swash Caps', cursive !important;
@@ -18,6 +20,11 @@ h1 {
 
 nav {
     background-color: rgb(93, 196, 80);
+    
+    .navegador a{
+        color: rgb(75, 71, 71) !important;
+        font-size: 20px;
+    }
 }
 
 .logo-y-titulo {
@@ -25,15 +32,17 @@ nav {
     flex-direction: column;
     height: 15rem;
     padding-bottom: 1rem;
+
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
 }
 
-.logo {
-    width: 150px;
-    height: 150px;
-}
+
 
 .main-index {
-    padding: .5rem;
+    padding: $spa2;
 }
 
 
@@ -43,135 +52,45 @@ footer {
     border-top: solid 15px orange;
     background: rgb(2, 0, 36);
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(152, 233, 244, 1) 0%, rgba(84, 240, 199, 1) 48%, rgba(100, 250, 168, 1) 100%, rgba(0, 209, 251, 1) 100%);
+    .img-footer {
+        width: 70px;
+        height: 70px;
+    }
 }
 
-.img-footer {
-    width: 70px;
-    height: 70px;
-}
+
 
 .diseñador {
     background-color: black;
     text-align: center;
     padding: .5rem 0rem;
-}
 
-.diseñador a {
-    color: white;
-}
-
-
-
-/* Contacto.html */
-.main-contacto {
-    display: grid;
-}
-
-
-/* Personalizados.html */
-
-.titulo-galeria {
-    text-align: center;
-    margin: 1rem;
-}
-
-.galeria {
-    width: 40vw;
-}
-
-/* Contacto.html */
-
-form .mb-3 {
-    width: 15rem;
-}
-
-/* Empieza Media query desktop */
-
-@media screen and (min-width: 1024px) {
-    /* Efectos */
-
-    /* Productos */
-    .caja-productos {
-        transition-duration: 0.5s;
-        transition-delay: 0.1s;
-        transition-timing-function: ease;
-    }
-
-    .caja-productos:hover {
-        transform: scale(1.1);
-        border: solid white 5px;
-    }
-
-    /* Footer */
-    .img-footer {
-        transition-duration: 0.8s;
-        transition-timing-function: ease;
-    }
-
-    .img-footer:hover {
-        transform: rotate(360deg);
-    }
-
-    /* Personalizado */
-    .img-personalizado img {
-        transition-duration: 0.5s;
-        transition-delay: 0.1s;
-        transition-timing-function: ease;
-    }
-
-    .img-personalizado img:hover {
-        transform: scale(1.1);
-        border: solid white 5px;
-        border-radius: 1rem;
-    }
-
-    /* Nav */
-
-    .navegador a:hover {
-        background-color: gold;
-        border-radius: .5rem;
-    }
-
-
-    .logo {
-        animation-name: movimiento-logo;
-        animation-iteration-count: 1;
-        animation-timing-function: ease;
-        animation-duration: 1s;
-        animation-delay: .0s;
-    }
-
-    @keyframes movimiento-logo {
-        0% {
-            transform: translate(180px);
-            opacity: 0;
-        }
-
-        100% {
-            transform: translate(0px);
-            opacity: 1;
-        }
-
-    }
-
-    h2 {
-        animation-name: movimiento-h2;
-        animation-iteration-count: 1;
-        animation-timing-function: ease;
-        animation-duration: 1s;
-        animation-delay: .0s;
-    }
-
-    @keyframes movimiento-h2 {
-        0% {
-            transform: translate(-180px);
-            opacity: 0;
-        }
-
-        100% {
-            transform: translate(0px);
-            opacity: 1;
-        }
-
+    a{
+        color: rgb(219, 202, 202);
     }
 }
+/* Termina cambios generales CSS */
+
+/* Main-index */
+.info-util-index{
+    padding: $spa1;
+    background-color: $c-fondo;
+
+    h3{
+        display: inline-block;
+        text-decoration: underline;
+        text-decoration-color: gold;
+    }
+}
+
+@import "productos";
+
+@import "personalizado";
+
+@import "preguntas-frecuentes";
+
+@import "contacto";
+
+@import "media";
+
+@import "efecto-transicion"
